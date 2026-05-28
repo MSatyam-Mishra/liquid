@@ -183,6 +183,28 @@ class _EventConsoleState extends State<EventConsole> {
 - Use `WatchDrop` selectors for performance-sensitive areas.
 - Dispose `Tub` in `State.dispose`.
 
+## Full Example App
+
+This package includes a complete Notes Workspace demo in:
+
+- `example/`
+
+The example demonstrates all requested state categories:
+
+- nested state (folder tree + selected branch)
+- search state (query-driven filtering)
+- editor state (selected note + editable body)
+- folder hierarchy state
+- theme state (light/dark toggle)
+
+Run it with:
+
+```bash
+cd packages/liquid_flutter/example
+flutter pub get
+flutter run
+```
+
 ## Onion Architecture Fit
 
 - Presentation:
