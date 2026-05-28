@@ -1,5 +1,5 @@
 name: liquid_core
-description: Liquid core primitives for Dart and Onion Architecture.
+description: Core Dart engine for a fluid, reactive state management framework enforcing Onion Architecture.
 version: 0.1.0
 repository: https://example.com/liquid
 

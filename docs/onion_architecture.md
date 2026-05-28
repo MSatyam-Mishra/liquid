@@ -2,6 +2,16 @@
 
 Liquid keeps state simple while preserving clean layer boundaries.
 
+## Component Mapping
+
+| Liquid Component | Typical Onion Layer | Purpose |
+| --- | --- | --- |
+| `Drop`, `StreamDrop` | Application state boundary (close to domain) | Reactive state and async state data used by use-cases |
+| `Flow` | Application | Derived state and orchestration logic |
+| `Ripple`, `RippleEffect`, `WatchDrop` | Presentation | UI reactions and widget subscriptions |
+| `Tub` | Application composition/root | Scoped lifecycle container for feature state |
+| Repositories/adapters | Infrastructure | External data integration |
+
 ## Layer responsibilities
 
 - Domain layer:

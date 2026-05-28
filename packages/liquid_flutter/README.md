@@ -6,6 +6,37 @@ presentation, application, domain, and infrastructure.
 
 Use this package when you want lightweight reactive state in Flutter with explicit scope ownership and granular rebuild control.
 
+## What Is Liquid
+
+Liquid is a scalable reactive state management + dependency scoping approach for Flutter and Dart.
+It is designed so core business logic remains isolated from widgets and external systems.
+
+Liquid uses a water-based mental model:
+
+- `Drop`: atomic state
+- `StreamDrop`: async state stream model
+- `Flow`: derived/business orchestration
+- `Ripple`: side-effect reaction
+- `Tub`: scoped container + lifecycle owner
+
+## Onion Architecture Mapping
+
+Liquid keeps dependencies flowing inward and uses each component at a clear layer boundary.
+
+| Liquid Component | Typical Onion Layer | Purpose |
+| --- | --- | --- |
+| `Drop`, `StreamDrop` | Application state boundary (close to domain) | Hold reactive state and async state representations used by use-cases |
+| `Flow` | Application layer | Compose and derive business state from Drops |
+| `Ripple`, `RippleEffect`, `WatchDrop` | Presentation layer | Trigger and consume UI reactions from state changes |
+| `Tub` | Application composition/root | Scope and lifecycle container for feature/module state graphs |
+| Repositories, APIs, DB adapters | Infrastructure layer | Feed data into `Drop`/`StreamDrop` through application logic |
+
+Notes for correctness with current implementation:
+
+- `Drop` is mutable through `value` and `update` (not immutable snapshots).
+- `Tub` is scoped, not necessarily global.
+- `Ripple` reacts on state change; it is not a built-in one-time event queue.
+
 ## Features
 
 - `LiquidScope` for dependency-free `Tub` access in widget trees
