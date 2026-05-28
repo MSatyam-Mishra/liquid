@@ -6,15 +6,15 @@ import '../domain/feature_demo.dart';
 class FeatureCatalogModule {
   FeatureCatalogModule()
       : tub = liquid.Tub(label: 'feature_catalog'),
-        themeMode = liquid.Drop<ThemeMode>(ThemeMode.light, label: 'theme_mode'),
-        nestedParentCount = liquid.Drop<int>(0, label: 'nested_parent_count'),
-        nestedChildCount = liquid.Drop<int>(0, label: 'nested_child_count'),
-        searchQuery = liquid.Drop<String>('', label: 'search_query'),
-        folderDepthCount = liquid.Drop<int>(1, label: 'folder_depth_count'),
-        editorCharacterCount = liquid.Drop<int>(0, label: 'editor_char_count'),
+        themeMode = liquid.Spring<ThemeMode>(ThemeMode.light, label: 'theme_mode'),
+        nestedParentCount = liquid.Spring<int>(0, label: 'nested_parent_count'),
+        nestedChildCount = liquid.Spring<int>(0, label: 'nested_child_count'),
+        searchQuery = liquid.Spring<String>('', label: 'search_query'),
+        folderDepthCount = liquid.Spring<int>(1, label: 'folder_depth_count'),
+        editorCharacterCount = liquid.Spring<int>(0, label: 'editor_char_count'),
         streamCounter = liquid.Flow<int>(label: 'stream_counter'),
-        rippleCount = liquid.Drop<int>(0, label: 'ripple_count'),
-        baseCount = liquid.Drop<int>(0, label: 'base_count') {
+        rippleCount = liquid.Spring<int>(0, label: 'ripple_count'),
+        baseCount = liquid.Spring<int>(0, label: 'base_count') {
     ripple = liquid.Ripple(
       source: baseCount,
       label: 'base_count_ripple',
@@ -23,15 +23,15 @@ class FeatureCatalogModule {
   }
 
   final liquid.Tub tub;
-  final liquid.Drop<ThemeMode> themeMode;
-  final liquid.Drop<int> baseCount;
-  final liquid.Drop<int> nestedParentCount;
-  final liquid.Drop<int> nestedChildCount;
-  final liquid.Drop<String> searchQuery;
-  final liquid.Drop<int> folderDepthCount;
-  final liquid.Drop<int> editorCharacterCount;
+  final liquid.Spring<ThemeMode> themeMode;
+  final liquid.Spring<int> baseCount;
+  final liquid.Spring<int> nestedParentCount;
+  final liquid.Spring<int> nestedChildCount;
+  final liquid.Spring<String> searchQuery;
+  final liquid.Spring<int> folderDepthCount;
+  final liquid.Spring<int> editorCharacterCount;
   final liquid.Flow<int> streamCounter;
-  final liquid.Drop<int> rippleCount;
+  final liquid.Spring<int> rippleCount;
   late final liquid.Ripple ripple;
 
   final List<FeatureDefinition> features = const <FeatureDefinition>[

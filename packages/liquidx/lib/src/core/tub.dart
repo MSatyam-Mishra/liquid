@@ -1,7 +1,7 @@
 import 'drop.dart';
 import 'pool.dart';
 
-typedef DropFactory<T> = Drop<T> Function();
+typedef DropFactory<T> = Spring<T> Function();
 
 class Tub {
   Tub({String? label}) : label = label ?? 'tub';
@@ -37,15 +37,19 @@ class Tub {
     return created;
   }
 
-  Drop<T> drop<T>(Object key, T initialValue, {String? label}) {
-    return getOrCreate<Drop<T>>(
+  Spring<T> spring<T>(Object key, T initialValue, {String? label}) {
+    return getOrCreate<Spring<T>>(
       key,
       () {
-        final Drop<T> created = Drop<T>(initialValue, label: label);
+        final Spring<T> created = Spring<T>(initialValue, label: label);
         _disposers.add(created.dispose);
         return created;
       },
     );
+  }
+
+  Drop<T> drop<T>(Object key, T initialValue, {String? label}) {
+    return spring<T>(key, initialValue, label: label);
   }
 
   Pool<T> pool<T>(Object key, T Function() compute, {String? label}) {

@@ -28,7 +28,7 @@ final class AsyncError<T> extends AsyncDropState<T> {
   final StackTrace stackTrace;
 }
 
-class Flow<T> extends Drop<AsyncDropState<T>> {
+class Flow<T> extends Spring<AsyncDropState<T>> {
   Flow({String? label}) : super(AsyncIdle<T>(), label: label);
 
   int _version = 0;
@@ -94,3 +94,14 @@ class Flow<T> extends Drop<AsyncDropState<T>> {
 
 @Deprecated('Use Flow<T> for async stream state.')
 typedef StreamDrop<T> = Flow<T>;
+
+class Splash<T> extends Flow<T> {
+  Splash({super.label});
+
+  @override
+  void bindStream(Stream<T> stream) {
+    throw UnsupportedError(
+      'Splash<T> is future-focused. Use Flow<T> for continuous streams.',
+    );
+  }
+}

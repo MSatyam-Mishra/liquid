@@ -75,13 +75,13 @@ class CounterPage extends StatefulWidget {
 
 class _CounterPageState extends State<CounterPage> {
   late final Tub tub;
-  late final Drop<int> count;
+  late final Spring<int> count;
 
   @override
   void initState() {
     super.initState();
     tub = Tub(label: 'counter_page');
-    count = tub.drop<int>('count', 0, label: 'count');
+    count = tub.spring<int>('count', 0, label: 'count');
   }
 
   @override

@@ -4,7 +4,7 @@ import 'package:liquidx/liquidx.dart';
 
 void main() {
   testWidgets('ripple effect reacts to drop changes', (WidgetTester tester) async {
-    final Drop<int> source = Drop<int>(0, label: 'source');
+    final Spring<int> source = Spring<int>(0, label: 'source');
     var fired = 0;
 
     await tester.pumpWidget(

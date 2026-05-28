@@ -6,7 +6,7 @@ void main() {
   testWidgets('watch drop rebuilds only when selected value changes', (
     WidgetTester tester,
   ) async {
-    final Drop<int> count = Drop<int>(0, label: 'count');
+    final Spring<int> count = Spring<int>(0, label: 'count');
     var builds = 0;
 
     await tester.pumpWidget(

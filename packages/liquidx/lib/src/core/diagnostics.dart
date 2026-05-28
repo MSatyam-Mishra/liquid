@@ -5,6 +5,7 @@ enum LiquidEventType {
   dropInvalidated,
   poolRecomputed,
   rippleFired,
+  notifyFired,
   streamStarted,
   streamData,
   streamError,

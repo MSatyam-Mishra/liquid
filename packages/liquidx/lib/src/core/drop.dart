@@ -3,14 +3,16 @@ import 'pool.dart';
 
 typedef LiquidListener = void Function();
 
-abstract interface class ReadDrop<T> {
+abstract interface class Drop<T> {
   T get value;
   void addListener(LiquidListener listener);
   void removeListener(LiquidListener listener);
 }
 
-class Drop<T> implements ReadDrop<T>, ReactiveSource {
-  Drop(this._value, {String? label}) : label = label ?? 'drop<$T>';
+typedef ReadDrop<T> = Drop<T>;
+
+class Spring<T> implements Drop<T>, ReactiveSource {
+  Spring(this._value, {String? label}) : label = label ?? 'spring<$T>';
 
   @override
   final String label;
@@ -79,7 +81,7 @@ class Drop<T> implements ReadDrop<T>, ReactiveSource {
 
   void _assertNotDisposed() {
     if (_disposed) {
-      throw StateError('Drop "$label" was already disposed.');
+      throw StateError('Spring "$label" was already disposed.');
     }
   }
 }

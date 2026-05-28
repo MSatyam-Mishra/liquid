@@ -31,7 +31,7 @@ final class DependencyCollector {
   }
 }
 
-class Pool<T> implements ReadDrop<T>, ReactiveSource {
+class Pool<T> implements Drop<T>, ReactiveSource {
   Pool(this._compute, {String? label}) : label = label ?? 'pool<$T>';
 
   final ComputePool<T> _compute;
