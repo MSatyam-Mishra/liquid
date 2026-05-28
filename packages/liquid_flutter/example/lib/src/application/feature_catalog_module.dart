@@ -39,51 +39,61 @@ class FeatureCatalogModule {
       feature: LiquidFeature.drop,
       title: 'Drop',
       description: 'Smallest reactive state unit using a simple counter.',
+      whereToUse: 'Use for any single mutable value like count, toggle, selected id, or input text.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.flow,
       title: 'Flow',
       description: 'Derived counter state (double + triple) with memoized recompute.',
+      whereToUse: 'Use when one value must be computed from other states without manual syncing.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.tub,
       title: 'Tub',
       description: 'Scoped state container for counter lifecycle ownership.',
+      whereToUse: 'Use per feature/page/module to create and dispose a local state graph cleanly.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.ripple,
       title: 'Ripple',
       description: 'Counter side-effects that react to count changes.',
+      whereToUse: 'Use for side effects: navigation, analytics, logs, snackbars, and command triggers.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.streamDrop,
       title: 'StreamDrop',
       description: 'Async counter loading state (loading/data/error).',
+      whereToUse: 'Use for API calls, async initialization, and stream/listener-driven state.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.nestedState,
       title: 'Nested State',
       description: 'Parent counter + child counter composition.',
+      whereToUse: 'Use when child/section state contributes to a parent/aggregate total.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.searchState,
       title: 'Search State',
       description: 'Counter filtering through query state.',
+      whereToUse: 'Use in searchable lists, filters, and query-driven views.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.editorState,
       title: 'Editor State',
       description: 'Counter reflected as editable text/character state.',
+      whereToUse: 'Use in forms, note editors, and draft/editing experiences.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.folderHierarchyState,
       title: 'Folder Hierarchy State',
       description: 'Hierarchical counters by folder depth.',
+      whereToUse: 'Use for nested trees like folders, categories, and menu hierarchies.',
     ),
     FeatureDefinition(
       feature: LiquidFeature.themeState,
       title: 'Theme State',
       description: 'Counter app theme switching using Liquid state.',
+      whereToUse: 'Use for app-wide preferences such as theme, locale, and accessibility options.',
     ),
   ];
 

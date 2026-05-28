@@ -16,9 +16,11 @@ class FeatureDefinition {
     required this.feature,
     required this.title,
     required this.description,
+    required this.whereToUse,
   });
 
   final LiquidFeature feature;
   final String title;
   final String description;
+  final String whereToUse;
 }

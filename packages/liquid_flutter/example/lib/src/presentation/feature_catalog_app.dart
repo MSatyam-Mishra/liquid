@@ -76,7 +76,18 @@ class FeatureCatalogScreen extends StatelessWidget {
           return Card(
             child: ListTile(
               title: Text(item.title, style: const TextStyle(fontWeight: FontWeight.w700)),
-              subtitle: Text(item.description),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Text(item.description),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Where to use: ${item.whereToUse}',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+              ),
               trailing: const Icon(Icons.chevron_right),
               onTap: () {
                 Navigator.of(context).push(
@@ -138,6 +149,19 @@ class _FeatureCounterDemoScreenState extends State<FeatureCounterDemoScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(widget.feature.description),
+            const SizedBox(height: 16),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.45),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                'Where to use: ${widget.feature.whereToUse}',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ),
             const SizedBox(height: 16),
             _counterHeader(module),
             const SizedBox(height: 20),
