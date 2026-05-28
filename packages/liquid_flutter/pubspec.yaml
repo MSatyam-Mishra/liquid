@@ -1,4 +1,4 @@
-name: flutter_liquid
+name: liquidx
 description: A fluid, reactive state management framework enforcing Onion Architecture. Isolate UI and domain logic using Drops, Flows, Tubs, and Ripples.
 version: 0.1.0
 repository: https://github.com/MSatyam-Mishra/liquid/tree/main/packages/liquid_flutter

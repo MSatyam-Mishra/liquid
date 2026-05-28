@@ -28,8 +28,8 @@ final class AsyncError<T> extends AsyncDropState<T> {
   final StackTrace stackTrace;
 }
 
-class StreamDrop<T> extends Drop<AsyncDropState<T>> {
-  StreamDrop({String? label}) : super(AsyncIdle<T>(), label: label);
+class Flow<T> extends Drop<AsyncDropState<T>> {
+  Flow({String? label}) : super(AsyncIdle<T>(), label: label);
 
   int _version = 0;
   StreamSubscription<T>? _subscription;
@@ -91,3 +91,6 @@ class StreamDrop<T> extends Drop<AsyncDropState<T>> {
     super.dispose();
   }
 }
+
+@Deprecated('Use Flow<T> for async stream state.')
+typedef StreamDrop<T> = Flow<T>;

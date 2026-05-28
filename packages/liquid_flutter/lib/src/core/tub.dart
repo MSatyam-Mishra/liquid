@@ -1,5 +1,5 @@
 import 'drop.dart';
-import 'flow.dart';
+import 'pool.dart';
 
 typedef DropFactory<T> = Drop<T> Function();
 
@@ -48,15 +48,20 @@ class Tub {
     );
   }
 
-  Flow<T> flow<T>(Object key, T Function() compute, {String? label}) {
-    return getOrCreate<Flow<T>>(
+  Pool<T> pool<T>(Object key, T Function() compute, {String? label}) {
+    return getOrCreate<Pool<T>>(
       key,
       () {
-        final Flow<T> created = Flow<T>(compute, label: label);
+        final Pool<T> created = Pool<T>(compute, label: label);
         _disposers.add(created.dispose);
         return created;
       },
     );
+  }
+
+  @Deprecated('Use pool<T>() for computed/derived state.')
+  Pool<T> flow<T>(Object key, T Function() compute, {String? label}) {
+    return pool<T>(key, compute, label: label);
   }
 
   void onDispose(void Function() callback) {

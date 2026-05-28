@@ -14,8 +14,8 @@ It is designed so core business logic remains isolated from widgets and external
 Liquid uses a water-based mental model:
 
 - `Drop`: atomic state
-- `StreamDrop`: async state stream model
-- `Flow`: derived/business orchestration
+- `Flow`: async state stream model
+- `Pool`: derived/business orchestration
 - `Ripple`: side-effect reaction
 - `Tub`: scoped container + lifecycle owner
 
@@ -25,11 +25,11 @@ Liquid keeps dependencies flowing inward and uses each component at a clear laye
 
 | Liquid Component | Typical Onion Layer | Purpose |
 | --- | --- | --- |
-| `Drop`, `StreamDrop` | Application state boundary (close to domain) | Hold reactive state and async state representations used by use-cases |
-| `Flow` | Application layer | Compose and derive business state from Drops |
+| `Drop`, `Flow` | Application state boundary (close to domain) | Hold reactive state and async state representations used by use-cases |
+| `Pool` | Application layer | Compose and derive business state from Drops |
 | `Ripple`, `RippleEffect`, `WatchDrop` | Presentation layer | Trigger and consume UI reactions from state changes |
 | `Tub` | Application composition/root | Scope and lifecycle container for feature/module state graphs |
-| Repositories, APIs, DB adapters | Infrastructure layer | Feed data into `Drop`/`StreamDrop` through application logic |
+| Repositories, APIs, DB adapters | Infrastructure layer | Feed data into `Drop`/`Flow` through application logic |
 
 Notes for correctness with current implementation:
 
@@ -212,7 +212,7 @@ class _EventConsoleState extends State<EventConsole> {
 
 - Create one `Tub` per feature/page scope.
 - Create `Drop`s in stateful owner classes or module coordinators.
-- Use `Flow` for computed/read-only projections.
+- Use `Pool` for computed/read-only projections.
 - Use `WatchDrop` selectors for performance-sensitive areas.
 - Dispose `Tub` in `State.dispose`.
 
@@ -224,7 +224,7 @@ This package includes a complete Feature Catalog counter demo in:
 
 The catalog lists Liquid features on one screen. Tapping a feature opens a counter-focused showcase screen for that feature. It demonstrates:
 
-- `Drop`, `Flow`, `Tub`, `Ripple`, `StreamDrop`
+- `Drop`, `Flow`, `Tub`, `Ripple`, `Pool`
 - nested state counters (parent/child + derived total)
 - search state over generated counter values
 - editor state (character count)
@@ -242,11 +242,11 @@ flutter run
 ## Onion Architecture Fit
 
 - Presentation:
-  - widgets read from Drops/Flows via `WatchDrop`
+  - widgets read from Drops/Pools via `WatchDrop`
   - side effects via `RippleEffect`
 - Application:
   - owns Tub and mutation commands
 - Domain:
   - independent of Flutter
 - Infrastructure:
-  - pushes data into `StreamDrop` or commands
+  - pushes data into `Flow` or commands

@@ -3,7 +3,7 @@ typedef LiquidEventData = Map<String, Object?>;
 enum LiquidEventType {
   dropSet,
   dropInvalidated,
-  flowRecomputed,
+  poolRecomputed,
   rippleFired,
   streamStarted,
   streamData,

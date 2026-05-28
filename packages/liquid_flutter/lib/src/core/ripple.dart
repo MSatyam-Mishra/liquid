@@ -1,5 +1,5 @@
 import 'diagnostics.dart';
-import 'flow.dart';
+import 'pool.dart';
 
 class Ripple {
   Ripple({
