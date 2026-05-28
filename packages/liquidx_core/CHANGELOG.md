@@ -1,6 +1,6 @@
 ## 0.1.0
 
-- Initial release of `liquid_core`.
+- Initial release of `liquidx_core`.
 - Added core reactive primitives:
   - `Drop<T>`
   - `Flow<T>`

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -1,8 +1,8 @@
-# liquid_core
+# liquidx_core
 
 Minimal reactive state engine for Dart applications and Onion Architecture.
 
-`liquid_core` is framework-agnostic. Use it in pure Dart services, CLI tools,
+`liquidx_core` is framework-agnostic. Use it in pure Dart services, CLI tools,
 server applications, or as the foundation for UI bindings like Flutter.
 
 ## Features
@@ -18,7 +18,7 @@ server applications, or as the foundation for UI bindings like Flutter.
 
 ```yaml
 dependencies:
-  liquid_core: ^0.1.0
+  liquidx_core: ^0.1.0
 ```
 
 Then run:
@@ -32,7 +32,7 @@ dart pub get
 ### Example 1: Basic state with `Drop`
 
 ```dart
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 
 void main() {
   final count = Drop<int>(0, label: 'count');
@@ -46,7 +46,7 @@ void main() {
 ### Example 2: Derived state with `Flow`
 
 ```dart
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 
 void main() {
   final price = Drop<double>(100, label: 'price');
@@ -66,7 +66,7 @@ void main() {
 ### Example 3: Feature scope with `Tub`
 
 ```dart
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 
 void main() {
   final tub = Tub(label: 'cart_feature');
@@ -83,7 +83,7 @@ void main() {
 ### Example 4: Side effects using `Ripple`
 
 ```dart
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 
 void main() {
   final status = Drop<String>('idle', label: 'status');
@@ -102,7 +102,7 @@ void main() {
 ### Example 5: Async loading with `StreamDrop`
 
 ```dart
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 
 Future<List<String>> fetchTodos() async {
   return <String>['one', 'two', 'three'];
@@ -124,7 +124,7 @@ Future<void> main() async {
 Subscribe to lifecycle/state events:
 
 ```dart
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 
 void main() {
   final timeline = LiquidTimelineObserver(maxEvents: 100);

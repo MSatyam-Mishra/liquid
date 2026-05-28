@@ -1,7 +1,7 @@
-name: liquid_core
+name: liquidx_core
 description: Core Dart engine for a fluid, reactive state management framework enforcing Onion Architecture.
 version: 0.1.0
-repository: https://github.com/MSatyam-Mishra/liquid/tree/main/packages/liquid_core
+repository: https://github.com/MSatyam-Mishra/liquid/tree/main/packages/liquidx_core
 homepage: https://github.com/MSatyam-Mishra/liquid
 environment:
   sdk: ^3.10.9

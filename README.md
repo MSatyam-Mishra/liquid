@@ -9,7 +9,7 @@ Liquid is a lightweight state management system for Dart and Flutter focused on:
 
 This repository is a monorepo with two packages:
 
-- `packages/liquid_core`: framework-agnostic reactive core for Dart
+- `packages/liquidx_core`: framework-agnostic reactive core for Dart
 - `packages/liquid_flutter`: Flutter bindings package (`liquidx`)
 
 ## Why Liquid
@@ -71,7 +71,7 @@ Async state holder with race protection.
 ### 1) Pure Dart Counter (Drop + Flow)
 
 ```dart
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 
 void main() {
   final tub = Tub(label: 'counter_scope');
@@ -89,7 +89,7 @@ void main() {
 ### 2) Async Data Fetch (StreamDrop)
 
 ```dart
-import 'package:liquid_core/liquid_core.dart';
+import 'package:liquidx_core/liquidx_core.dart';
 
 Future<String> fetchProfile() async => 'satya';
 
@@ -143,7 +143,7 @@ For a deeper architecture guide and migration references, see `docs/onion_archit
 
 ## Package Links
 
-- `liquid_core` docs: `packages/liquid_core/README.md`
+- `liquidx_core` docs: `packages/liquidx_core/README.md`
 - `liquidx` docs: `packages/liquid_flutter/README.md`
 
 ## Development (Monorepo)
