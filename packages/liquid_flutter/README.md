@@ -1,6 +1,6 @@
-# liquid_flutter
+# flutter_liquid
 
-`liquid_flutter` is the Flutter package for **Liquid** state management.
+`flutter_liquid` is the Flutter package for **Liquid** state management.
 Liquid follows **Onion Architecture** with clear boundaries between
 presentation, application, domain, and infrastructure.
 
@@ -49,7 +49,7 @@ Notes for correctness with current implementation:
 
 ```yaml
 dependencies:
-  liquid_flutter: ^0.1.0
+  flutter_liquid: ^0.1.0
 ```
 
 Then run:
@@ -64,7 +64,7 @@ flutter pub get
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:liquid_flutter/liquid_flutter.dart';
+import 'package:flutter_liquid/flutter_liquid.dart';
 
 class CounterPage extends StatefulWidget {
   const CounterPage({super.key});
@@ -116,7 +116,7 @@ class _CounterPageState extends State<CounterPage> {
 
 ```dart
 import 'package:flutter/widgets.dart';
-import 'package:liquid_flutter/liquid_flutter.dart';
+import 'package:flutter_liquid/flutter_liquid.dart';
 
 class EvenOddBadge extends StatelessWidget {
   const EvenOddBadge({required this.count, super.key});
@@ -141,7 +141,7 @@ In this pattern, the widget rebuilds only when parity changes (even -> odd or od
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:liquid_flutter/liquid_flutter.dart';
+import 'package:flutter_liquid/flutter_liquid.dart';
 
 class LoginEffectView extends StatelessWidget {
   const LoginEffectView({required this.authState, super.key});
@@ -167,7 +167,7 @@ class LoginEffectView extends StatelessWidget {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:liquid_flutter/liquid_flutter.dart';
+import 'package:flutter_liquid/flutter_liquid.dart';
 
 class EventConsole extends StatefulWidget {
   const EventConsole({super.key});

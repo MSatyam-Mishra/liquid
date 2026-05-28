@@ -1,6 +1,6 @@
 ## 0.1.0
 
-- Initial release of `liquid_flutter`.
+- Initial release of `flutter_liquid`.
 - Added Flutter bindings for Liquid core primitives:
   - `LiquidScope`
   - `WatchDrop<T, S>`

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_flutter/liquid_flutter.dart' as liquid;
+import 'package:flutter_liquid/flutter_liquid.dart' as liquid;
 
 import '../domain/feature_demo.dart';
 
