@@ -10,7 +10,7 @@ Liquid is a lightweight state management system for Dart and Flutter focused on:
 This repository is a monorepo with two packages:
 
 - `packages/liquid_core`: framework-agnostic reactive core for Dart
-- `packages/liquid_flutter`: Flutter bindings package (`flutter_liquid`)
+- `packages/liquid_flutter`: Flutter bindings package (`liquidx`)
 
 ## Why Liquid
 
@@ -108,7 +108,7 @@ Future<void> main() async {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter_liquid/flutter_liquid.dart';
+import 'package:liquidx/liquidx.dart';
 
 class EvenOddText extends StatelessWidget {
   EvenOddText({super.key});
@@ -144,7 +144,7 @@ For a deeper architecture guide and migration references, see `docs/onion_archit
 ## Package Links
 
 - `liquid_core` docs: `packages/liquid_core/README.md`
-- `flutter_liquid` docs: `packages/liquid_flutter/README.md`
+- `liquidx` docs: `packages/liquid_flutter/README.md`
 
 ## Development (Monorepo)
 
