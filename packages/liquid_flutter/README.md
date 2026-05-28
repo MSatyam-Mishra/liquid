@@ -185,16 +185,17 @@ class _EventConsoleState extends State<EventConsole> {
 
 ## Full Example App
 
-This package includes a complete Notes Workspace demo in:
+This package includes a complete Feature Catalog counter demo in:
 
 - `example/`
 
-The example demonstrates all requested state categories:
+The catalog lists Liquid features on one screen. Tapping a feature opens a counter-focused showcase screen for that feature. It demonstrates:
 
-- nested state (folder tree + selected branch)
-- search state (query-driven filtering)
-- editor state (selected note + editable body)
-- folder hierarchy state
+- `Drop`, `Flow`, `Tub`, `Ripple`, `StreamDrop`
+- nested state counters (parent/child + derived total)
+- search state over generated counter values
+- editor state (character count)
+- folder hierarchy state (depth-weighted counter)
 - theme state (light/dark toggle)
 
 Run it with:
