@@ -1,0 +1,9 @@
+name: liquid_workspace
+description: Workspace for Liquid state management packages.
+publish_to: none
+
+environment:
+  sdk: ^3.10.9
+
+dev_dependencies:
+  melos: ^7.1.1

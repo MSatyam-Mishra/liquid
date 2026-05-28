@@ -1,0 +1,8 @@
+name: liquid_workspace
+
+packages:
+  - packages/**
+
+scripts:
+  analyze: melos exec -- flutter analyze
+  test: melos exec -- flutter test
