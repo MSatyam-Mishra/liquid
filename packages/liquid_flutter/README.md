@@ -1,6 +1,8 @@
 # liquid_flutter
 
-Flutter bindings for `liquid_core`.
+`liquid_flutter` is the Flutter package for **Liquid** state management.
+Liquid follows **Onion Architecture** with clear boundaries between
+presentation, application, domain, and infrastructure.
 
 Use this package when you want lightweight reactive state in Flutter with explicit scope ownership and granular rebuild control.
 
